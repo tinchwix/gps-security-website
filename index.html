@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS Security (T) Ltd | Premier Security Solutions Tanzania - Coming Soon</title>
+  <meta name="description" content="GPS Security (T) Ltd - Private Security Excellence in Tanzania Since 2009. Our new website is launching soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #c8102e;
+      --primary-hover: #a00c24;
+      --primary-glow: rgba(200, 16, 46, 0.4);
+      --dark-navy: #090f1d;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --gold-accent: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--dark-navy);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Ambient animated security grid & glow background */
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(200, 16, 46, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(30, 58, 138, 0.22) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(9, 15, 29, 0.85) 0%, rgba(9, 15, 29, 0.98) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      padding: 2.2rem 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #c8102e, #82081d);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px var(--primary-glow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-badge i {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .logo-text h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .logo-text span {
+      color: var(--primary);
+    }
+
+    .logo-text p {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .top-contact {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .hotline-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(200, 16, 46, 0.15);
+      border: 1px solid rgba(200, 16, 46, 0.4);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hotline-btn:hover {
+      background: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+      transform: translateY(-1px);
+    }
+
+    .hotline-btn i {
+      color: #ff4d6d;
+    }
+
+    .hotline-btn:hover i {
+      color: #fff;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      margin-bottom: 1.8rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #38bdf8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 900px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 70%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title .highlight-red {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      line-height: 1.65;
+      margin-bottom: 2.8rem;
+    }
+
+    /* Core Services Grid Cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      margin-bottom: 3.5rem;
+      text-align: left;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200, 16, 46, 0.4);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(200, 16, 46, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff4d6d;
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #fff;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Quick Contact Box */
+    .contact-box {
+      background: linear-gradient(145deg, rgba(22, 33, 56, 0.8), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.2rem;
+      width: 100%;
+      max-width: 820px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-box h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .direct-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .direct-link-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s;
+    }
+
+    .direct-link-item:hover {
+      background: rgba(200, 16, 46, 0.2);
+      border-color: rgba(200, 16, 46, 0.4);
+      color: #fff;
+    }
+
+    .direct-link-item i {
+      color: var(--primary);
+    }
+
+    /* Footer & Accreditations */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .badge-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .badge-pill i {
+      color: var(--gold-accent);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+      }
+      .brand-logo {
+        justify-content: center;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .badges {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand-logo">
+      <div class="logo-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="logo-text">
+        <h1>GPS <span>SECURITY</span></h1>
+        <p>Tanzania &bull; Since 2009</p>
+      </div>
+    </a>
+
+    <div class="top-contact">
+      <a href="tel:0770911911" class="hotline-btn">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>24/7 Hotline: 0770-911-911</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Hero Content -->
+  <main>
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      <span>Official Portal Under Construction</span>
+    </div>
+
+    <h2 class="hero-title">
+      Setting The Gold Standard In <br>
+      <span class="gradient-text">Private Security In Tanzania</span>
+    </h2>
+
+    <p class="hero-subtitle">
+      GPS Security (T) Ltd is upgrading its digital presence with a comprehensive enterprise portal inspired by world-class standards. We remain 100% active and on duty 24 hours a day, 365 days a year across the United Republic of Tanzania.
+    </p>
+
+    <!-- Services Overview -->
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h3>Manned Guarding &amp; VIP</h3>
+        <p>Vetted and rigorously trained personnel for corporate, industrial, diplomatic, and executive close protection.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Rapid Tactical Response</h3>
+        <p>Lightning-fast armed response units powered in partnership with 911 Emergency Services across key regions.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+        <h3>Electronic Security &amp; GPS</h3>
+        <p>CCTV, biometric access control, perimeter electric fencing, real-time GPS fleet tracking, and fuel management.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h3>Investigations &amp; Courier</h3>
+        <p>Risk audits, loss control, secure and confidential tracked courier services, and corporate background due diligence.</p>
+      </div>
+    </div>
+
+    <!-- Contact Box -->
+    <div class="contact-box">
+      <h3>Need Immediate Security or Inquiries?</h3>
+      <p>Our operations dispatch center is always available to handle your requests and emergencies.</p>
+      
+      <div class="direct-links">
+        <a href="tel:0770911911" class="direct-link-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>0770-911-911</span>
+        </a>
+        <a href="mailto:info@GPSsecurity.co.tz" class="direct-link-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@GPSsecurity.co.tz</span>
+        </a>
+        <div class="direct-link-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Dar es Salaam, Tanzania</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      &copy; 2026 GPS Security (T) Ltd. All Rights Reserved. Domain: <strong>gpssecurity.co.tz</strong>
+    </div>
+
+    <div class="badges">
+      <div class="badge-pill"><i class="fa-solid fa-award"></i> ISO 18788:2024</div>
+      <div class="badge-pill"><i class="fa-solid fa-award"></i> ISO 9001 QMS</div>
+      <div class="badge-pill"><i class="fa-solid fa-award"></i> ICoCA Aligned</div>
+    </div>
+  </footer>
+</body>
+</html>
